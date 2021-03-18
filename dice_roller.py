@@ -2,12 +2,19 @@
 
 def main():
     import random
-    dice_rolls=3
-    dsum=0
+    dice_rolls = int(input('How many dice?'))
+    dice_sum = 0
+    dice_size = int(input('How many sides?'))
     for i in range(0,dice_rolls):
-        roll = random.randint(1,6)
-        dsum+=roll
-        print(f'You rolled a {roll} die')
-        print(f'sum={dsum}')
+      roll = random.randint(1,dice_size)
+      dice_sum += roll
+      if roll == 1:
+        print(f'You rolled a {roll}! Critical Fail')
+      elif roll == dice_size:
+        print(f'You rolled a {roll}! Critical Success!')
+      else:
+        print(f'You rolled a {roll}')
+    print(f'You have rolled a total of {dice_sum}')
+
 if __name__== "__main__":
     main()
